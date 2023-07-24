@@ -12,7 +12,7 @@ export class AppComponent {
   toggleAllBtn=false;
   check1=false;
   check2=false;
-
+  
 
   toggleAll(){
    this.toggleAllBtn= !this.toggleAllBtn;
