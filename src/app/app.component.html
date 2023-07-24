@@ -1,0 +1,34 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>{{title}}</h1>
+    <input class="new-todo" [attr.abc]="place" [placeholder]="place" autofocus>
+  </header>
+  <section class="main">
+    <input id="toggle-all" class="toggle-all" type="checkbox" 
+    [checked]="toggleAllBtn" (click)="toggleAll()">
+    <label for="toggle-all">Mark all as complete</label>
+    <ul class="todo-list">
+      <li [class]="{completed:check1,smallText:check1}">
+        <div class="view">
+          <input (click)="clickCheck1()" class="toggle" type="checkbox" [checked]="check1" >
+          <label>111</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+      <li [class.completed]="check2" [class.smallText]="check2">
+        <div class="view">
+        <input (click)="clickCheck2()" class="toggle" type="checkbox" [checked]="check2">
+          <label>222</label>
+          <button class="destroy"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</section>
+<div [style.font-size]="'3em'">Style語法示範1</div>
+<br>
+<div [style]="'font-size:2em;background-color:red'">Style語法示範2</div>
+<br>
+<div [style.font-size.em]="4">Style語法示範3 </div>
+<br>
+<div [style]="{width: '100px',backgroundColor: 'green'}">Style語法示範4</div>
