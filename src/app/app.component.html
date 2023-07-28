@@ -8,20 +8,14 @@
     [checked]="toggleAllBtn" (click)="toggleAll()">
     <label for="toggle-all">Mark all as complete</label>
     <ul class="todo-list">
-      <li [class]="{completed:check1,smallText:check1}">
+      <li *ngFor="let item of todoDataList" [class]="{completed:item.Status,smallText:item.Status}">
         <div class="view">
-          <input (click)="clickCheck1()" class="toggle" type="checkbox" [checked]="check1" >
-          <label>111</label>
+          <input (click)="clickCheck(item)" class="toggle" type="checkbox" [checked]="item.Status" >
+          <label>{{item.Thing}}</label>
           <button class="destroy"></button>
         </div>
       </li>
-      <li [class.completed]="check2" [class.smallText]="check2">
-        <div class="view">
-        <input (click)="clickCheck2()" class="toggle" type="checkbox" [checked]="check2">
-          <label>222</label>
-          <button class="destroy"></button>
-        </div>
-      </li>
+
     </ul>
   </section>
 </section>

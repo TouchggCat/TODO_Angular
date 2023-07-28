@@ -11,21 +11,31 @@ export class AppComponent {
 
   toggleAllBtn=false;
   check1=false;
-  check2=false;
+
   
+  todoDataList =[
+    {
+      Status:true,
+      Thing:'第一件事'
+    },{
+      Status:false,
+      Thing:'第二件事'
+    },{
+      Status:false,
+      Thing:'第三件事'
+    },
+  ];
 
   toggleAll(){
    this.toggleAllBtn= !this.toggleAllBtn;
-
-   this.check1=this.toggleAllBtn;
-   this.check2=this.toggleAllBtn;
+this.todoDataList.forEach(data=>{
+  data.Status=this.toggleAllBtn;
+});
   }
 
-  clickCheck1(){
-    this.check1=!this.check1;
+  clickCheck(item:any){
+    item.Status=!item.Status;
   }
 
-  clickCheck2(){
-    this.check2=!this.check2;
-  }
+
 }
